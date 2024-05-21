@@ -1,0 +1,62 @@
+{
+  "name": "core-sdk",
+  "version": "6.8.4",
+  "description": "",
+  "author": "",
+  "license": "BSD-3-Clause",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "prepublish": "yarn build",
+    "build": "yarn run clean && yarn run compile",
+    "build:watch": "tsc --watch",
+    "tsc-replace-paths": "tsconfig-replace-paths --project tsconfig.json",
+    "clean": "rm -rf ./dist && rm -rf tsconfig.tsbuildinfo",
+    "compile": "tsc -b tsconfig.json",
+    "lint": "eslint lib/**.ts",
+    "prepublishOnly": "npm run lint"
+  },
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "dependencies": {
+    "@maticnetwork/eth-decoder": "",
+    "@types/reflect-metadata": "^0.1.0",
+    "@walletconnect/ethereum-provider": "^1.7.8",
+    "@web3-onboard/coinbase": "^2.1.2",
+    "@web3-onboard/core": "^2.8.1",
+    "@web3-onboard/gas": "^2.1.1",
+    "@web3-onboard/injected-wallets": "^2.2.0",
+    "@web3-onboard/walletconnect": "^2.1.1",
+    "bignumber.js": "^9.0.1",
+    "eip-712": "^1.0.0",
+    "ethereum-multicall": "^2.14.0",
+    "ethers": "^5.6.2",
+    "eventemitter3": "^4.0.7",
+    "promise-parallel-throttle": "^3.3.0",
+    "reflect-metadata": "^0.1.13",
+    "tron-format-address": "^0.1.8",
+    "tronweb": "^4.1.0",
+    "tslib": "^2.1.0",
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0"
+  },
+  "devDependencies": {
+    "@types/bip39": "^3.0.0",
+    "@types/hdkey": "^2.0.0",
+    "@types/node": "^15.6.1",
+    "@types/websocket": "^1.0.4",
+    "eslint": "^7.27.0",
+    "npm-run-all": "^4.1.5",
+    "tsconfig-replace-paths": "^0.0.5",
+    "tslib": "^2.1.0",
+    "typescript": "^4.2.4"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "resolveJsonModule": true,
+    "experimentalDecorators": true,
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "emitDecoratorMetadata": true,
+    "target": "es2017",
+    "types": [
+      "node",
+      "reflect-metadata"
+    ],
+    "outDir": "./dist",
+    "rootDir": "./lib",
+  },
+  "exclude": [
+    "_lib",
+    "node_modules",
+    "dist"
+  ]
+}
